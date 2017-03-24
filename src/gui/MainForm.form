@@ -102,11 +102,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Contar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonContarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonReiniciar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Reiniciar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonReiniciarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -114,6 +120,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cerrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCerrarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

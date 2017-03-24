@@ -4,18 +4,20 @@
  * and open the template in the editor.
  */
 package gui;
-
+import contadormanual.ContadorManual;
 /**
  *
  * @author Jose
  */
 public class MainForm extends javax.swing.JFrame {
-
+    private ContadorManual cm;
     /**
      * Creates new form MainForm
      */
     public MainForm() {
         initComponents();
+        ContadorManual click = new ContadorManual();
+        cm = click;
     }
 
     /**
@@ -42,8 +44,18 @@ public class MainForm extends javax.swing.JFrame {
         campoConteo.setFocusable(false);
 
         botonContar.setText("Contar");
+        botonContar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonContarActionPerformed(evt);
+            }
+        });
 
         botonReiniciar.setText("Reiniciar");
+        botonReiniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonReiniciarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -73,6 +85,11 @@ public class MainForm extends javax.swing.JFrame {
         );
 
         botonCerrar.setText("Cerrar");
+        botonCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCerrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,6 +116,20 @@ public class MainForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonContarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonContarActionPerformed
+        cm.contar();
+        campoConteo.setText(Integer.toString(cm.getConteoActual()));
+    }//GEN-LAST:event_botonContarActionPerformed
+
+    private void botonReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonReiniciarActionPerformed
+        cm.reiniciarConteo();
+        campoConteo.setText(Integer.toString(cm.getConteoActual()));
+    }//GEN-LAST:event_botonReiniciarActionPerformed
+
+    private void botonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCerrarActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_botonCerrarActionPerformed
 
     /**
      * @param args the command line arguments
